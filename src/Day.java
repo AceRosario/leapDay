@@ -1,88 +1,60 @@
 public class Day {
-    private int dayValue;
-    protected int monthValue;
-    private int yearValue;
+    private int day;
+    protected int month;
 
-    public Day (int day, int month, int year){
-            this.dayValue = day;
-            this.monthValue = month;
-            this.yearValue = year;
-    }
-
-
-    public int getDayValue(){
-        return dayValue;
-    }
-
-    public int getMonthValue(){
-        return monthValue;
-    }
-
-    public int getYearValue() {
-        return yearValue;
-    }
-
-    private boolean isLeapYear() {
-        if ((yearValue % 4 == 0 && yearValue % 100 != 0) || (yearValue % 400 == 0)) {
-            return true;
-        }
-        return false;
+    public Day(int d, int m) {
+        day = d;
+        month = m;
     }
 
     public int findDayNum() {
         int dayNum = 0;
-        int leapDay = 28;
-
-        if (isLeapYear()) {
-            leapDay = 29;
-        }
-
-
-        switch (monthValue) {
+        switch (month) {
             case 1:
-                dayNum = dayValue;
+                dayNum = day;
                 break;
             case 2:
-                dayNum = 31 + dayValue;
+                dayNum = 31 + day;
                 break;
             case 3:
-                dayNum = 31 + leapDay + dayValue;
+                dayNum = 31 + 28 + day;
                 break;
             case 4:
-                dayNum = 31 + leapDay + 31 + dayValue;
+                dayNum = 31 + 28 + 31 + day;
                 break;
             case 5:
-                dayNum = 31 + leapDay + 31 + 30 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + day;
                 break;
             case 6:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + 31 + day;
                 break;
             case 7:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + 30 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + 31 + 30 + day;
                 break;
             case 8:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + 30 + 31 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + 31 + 30 + 31 + day;
                 break;
             case 9:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + 30 + 31 + 31 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + day;
                 break;
             case 10:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + 30 + 31 + 31 + 30 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + day;
                 break;
             case 11:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + dayValue;
+                dayNum = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + day;
                 break;
             case 12:
-                dayNum = 31 + leapDay + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + dayValue;
-                break;
-            default:
-                System.out.println("Invalid month");
+                dayNum = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + day;
                 break;
         }
-
         return dayNum;
     }
 
+    public int getDay() {
+        return day;
+    }
 
-
+    public int getMonth() {
+        return month;
+    }
 }
